@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import './EstimateHistory.css';
 
-const HISTORY_API_URL = 'http://localhost:5000/api/estimate';
-
+const HISTORY_API_URL = 'https://wantace-roof-estimator-2.onrender.com/api/estimate';
 function EstimateHistory({ onBack }) {
   const [estimates, setEstimates] = useState([]);
   const [loading, setLoading] = useState(true);
