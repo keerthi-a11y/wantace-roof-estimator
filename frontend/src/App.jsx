@@ -3,10 +3,12 @@ import { useState } from 'react';
 import './App.css';
 import Estimator from './components/estimator/Estimator';
 import EstimateHistory from './components/history/EstimateHistory';
+import OwnerPanel from './OwnerPanel';
 
 function App() {
   const [showEstimator, setShowEstimator] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
+  const [showOwnerPanel, setShowOwnerPanel] = useState(false);
 
   // Show Estimator page
   if (showEstimator) {
@@ -23,6 +25,13 @@ function App() {
       <EstimateHistory
         onBack={() => setShowHistory(false)}
       />
+    );
+  }
+
+  // Show Owner Panel
+  if (showOwnerPanel) {
+    return (
+      <OwnerPanel />
     );
   }
 
@@ -76,6 +85,14 @@ function App() {
             Estimate History
           </button>
 
+          {/* Owner Panel */}
+          <button
+            className="history-button"
+            onClick={() => setShowOwnerPanel(true)}
+          >
+            Owner Panel
+          </button>
+
           <p className="small-text">
             Takes about 2 minutes · No obligation
           </p>
@@ -93,4 +110,3 @@ function App() {
 }
 
 export default App;
-

@@ -5,6 +5,8 @@ require('dotenv').config();
 
 const estimateRoutes = require('./routes/estimateRoutes');
 const questionRoutes = require('./routes/questionRoutes');
+const authRoutes = require('./routes/authRoutes');
+const ownerPricingRoutes = require('./routes/ownerPricingRoutes');
 
 const app = express();
 
@@ -15,6 +17,8 @@ app.use(express.json());
 // Routes
 app.use('/api/questions', questionRoutes);
 app.use('/api/estimate', estimateRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/owner/pricing', ownerPricingRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
