@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import jsPDF from 'jspdf';
 import './Estimator.css';
 
-const API_URL = 'http://localhost:5000/api/questions';
-const ESTIMATE_API_URL = 'http://localhost:5000/api/estimate';
+const API_URL = 'https://wantace-roof-estimator-2.onrender.com/api/questions';
+const ESTIMATE_API_URL = 'https://wantace-roof-estimator-2.onrender.com/api/estimate';
 
 function Estimator({ onBack }) {
   const [step, setStep] = useState(1);
